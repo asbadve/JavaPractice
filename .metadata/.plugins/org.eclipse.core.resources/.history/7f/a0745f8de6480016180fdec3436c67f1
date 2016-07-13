@@ -1,0 +1,18 @@
+
+public class Ass2A {
+
+	class Student {
+
+		int rollNo;
+		String name;
+		double percentage;
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("test");
+
+	}
+
+}

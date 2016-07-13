@@ -1,0 +1,34 @@
+
+public class Ass2A {
+
+	class Student {
+
+		int rollNo;
+		String name;
+		double percentage;
+		static int count = 0;
+
+		void addCount() {
+			count = count + 1;
+		}
+
+		public Student() {
+			super();
+		}
+
+		public Student(int rollNo, String name, double percentage) {
+			super();
+			this.rollNo = rollNo;
+			this.name = name;
+			this.percentage = percentage;
+		}
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("test");
+
+	}
+
+}

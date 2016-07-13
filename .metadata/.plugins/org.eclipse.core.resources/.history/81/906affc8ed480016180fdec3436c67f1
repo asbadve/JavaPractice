@@ -1,0 +1,77 @@
+package student;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+public class Student implements Comparable<Student>, Comparator<Student> {
+
+	int rollNo;
+	String name;
+	double percentage;
+	static int count;
+
+	static void addCount() {
+		count = count + 1;
+	}
+
+	public Student() {
+		super();
+		addCount();
+	}
+
+	static Student[] sortStudent(Student[] unsortedArray) {
+		ArrayList<Student> arrayList = Arrays.asList(unsortedArray);
+		Collections.sort(arrayList);
+		return (Student[]) arrayList.toArray();
+	}
+
+	static class Arrays {
+		static ArrayList<Student> asList(Student[] unsortedArray) {
+			ArrayList<Student> arrayList = new ArrayList<>(unsortedArray.length);
+			for (int i = 0; i < unsortedArray.length; i++) {
+				int rollNo = unsortedArray[i].rollNo;
+				String name = unsortedArray[i].name;
+				double percentage = unsortedArray[i].percentage;
+				arrayList.add(new Student(rollNo, name, percentage));
+			}
+			return arrayList;
+		}
+	}
+
+	static class ArrayLists {
+		static ArrayList<Student> asArray(ArrayList<Student> arrayList) {
+			Student[] unsortedArray = new Student[arrayList.size()];
+			for (int i = 0; i < arrayList.size(); i++) {
+				
+				 unsortedArray[i].rollNo= rollNo =
+				String name = unsortedArray[i].name;
+				double percentage = unsortedArray[i].percentage;
+				arrayList.add(new Student(rollNo, name, percentage));
+			}
+			return arrayList;
+		}
+	}
+
+	public Student(int rollNo, String name, double percentage) {
+		super();
+		addCount();
+		this.rollNo = rollNo;
+		this.name = name;
+		this.percentage = percentage;
+	}
+
+	@Override
+	public int compareTo(Student o) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int compare(Student o1, Student o2) {
+		// TODO Auto-generated method stub
+		return o1.percentage < o2.percentage ? -1 : (o1.percentage == o2.percentage ? 0 : 1);
+
+	}
+
+}

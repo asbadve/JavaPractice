@@ -1,0 +1,18 @@
+package student;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class SetA2 {
+	int n;
+	Student[] studentsArray;
+	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Enter how many student do you want in your class");
+		n = Integer.parseInt(br.readLine());
+
+	}
+
+}

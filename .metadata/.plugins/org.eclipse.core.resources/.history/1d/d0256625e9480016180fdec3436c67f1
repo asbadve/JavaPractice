@@ -1,0 +1,13 @@
+package student;
+
+public class SetA2 {
+	int n;
+	Student[] studentsArray;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Enter how many ");
+
+	}
+
+}

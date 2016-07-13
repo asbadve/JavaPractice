@@ -1,0 +1,30 @@
+package student;
+
+public class Student {
+	int rollNo;
+	String name;
+	double percentage;
+	static int count;
+
+	static void addCount() {
+		count = count + 1;
+	}
+
+	public Student() {
+		super();
+		addCount();
+	}
+	
+	static Student[] sortStudent(){
+		
+	}
+
+	public Student(int rollNo, String name, double percentage) {
+		super();
+		addCount();
+		this.rollNo = rollNo;
+		this.name = name;
+		this.percentage = percentage;
+	}
+
+}

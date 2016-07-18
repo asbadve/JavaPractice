@@ -1,0 +1,67 @@
+import java.util.ArrayList;
+import java.util.Comparator;
+
+import student.Student;
+import student.Student.ArrayLists;
+import student.Student.Arrays;
+
+public class CricketPlayer {
+	String name;
+	int noOfInnings;
+	int noOfTimesNotOut;
+	int totalRuns;
+	double battingAverage;
+
+	public CricketPlayer(String name, int noOfInnings, int noOfTimesNotOut, int totalRuns, double battingAverage) {
+		super();
+		this.name = name;
+		this.noOfInnings = noOfInnings;
+		this.noOfTimesNotOut = noOfTimesNotOut;
+		this.totalRuns = totalRuns;
+		this.battingAverage = battingAverage;
+	}
+
+	static double avg(int totalRuns, int noOfInnings, int noOfTimesNotOut) {
+		return (totalRuns / (noOfInnings - noOfTimesNotOut));
+	}
+
+	static CricketPlayer[] sortCricketPlayer(CricketPlayer[] unsortedArray) {
+		ArrayList<CricketPlayer> arrayList = Arrays.asList(unsortedArray);
+		arrayList.sort(new Comparator<CricketPlayer>() {
+
+			@Override
+			public int compare(CricketPlayer o1, CricketPlayer o2) {
+				// TODO Auto-generated method stub
+				return o1.battingAverage > o2.battingAverage ? -1 : (o1.battingAverage == o2.battingAverage ? 0 : 1);
+			}
+		});
+		return ArrayLists.asArray(arrayList);
+	}
+
+	static class Arrays {
+		static ArrayList<CricketPlayer> asList(CricketPlayer[] unsortedArray) {
+			ArrayList<CricketPlayer> arrayList = new ArrayList<>(unsortedArray.length);
+			for (int i = 0; i < unsortedArray.length; i++) {
+				String name = unsortedArray[i].name;
+				int noOfInnings = unsortedArray[i].noOfInnings;
+				int noOfTimesNotOut = unsortedArray[i].noOfTimesNotOut;
+				int totalRuns = unsortedArray[i].totalRuns;
+				double battingAverage = unsortedArray[i].battingAverage;
+				arrayList.add(new CricketPlayer(name, noOfInnings, noOfTimesNotOut, totalRuns, battingAverage));
+			}
+			return arrayList;
+		}
+	}
+
+	static class ArrayLists {
+		static CricketPlayer[] asArray(ArrayList<CricketPlayer> arrayList) {
+			CricketPlayer[] cricketPlayerArray = new CricketPlayer[arrayList.size()];
+			for (int i = 0; i < arrayList.size(); i++) {
+				CricketPlayer cricketPlayer = arrayList.get(i);
+				cricketPlayerArray[i] = cricketPlayer;
+			}
+			return cricketPlayerArray;
+		}
+	}
+
+}

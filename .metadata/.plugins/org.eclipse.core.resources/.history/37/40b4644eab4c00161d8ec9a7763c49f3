@@ -1,0 +1,44 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class SetAExtra2 {
+
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		// TODO Auto-generated method stub
+		int n;
+		CricketPlayer[] cricktersArray;
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+		System.out.println("Enter no of players");
+		n = Integer.parseInt(br.readLine());
+		cricktersArray = new CricketPlayer[n];
+		for (int i = 0; i < n; i++) {
+			int srNum = i + 1;
+			System.out.println("Enter Name of cricket player" + srNum);
+			String name = br.readLine();
+
+			System.out.println("Enter number of innings for" + name);
+			int noOfInnings = Integer.parseInt(br.readLine());
+
+			System.out.println("Enter number of not outs for" + name);
+			int noOfTimesNotOut = Integer.parseInt(br.readLine());
+
+			System.out.println("Enter total runs for" + name);
+			int totalRuns = Integer.parseInt(br.readLine());
+
+			double battingAverage = CricketPlayer.avg(totalRuns, noOfInnings, noOfTimesNotOut);
+
+			CricketPlayer crickter = new CricketPlayer(name, noOfInnings, noOfTimesNotOut, totalRuns, battingAverage);
+			cricktersArray[i] = crickter;
+		}
+
+		System.out.println("sorted by batting avg:-");
+		cricktersArray = CricketPlayer.sortCricketPlayer(cricktersArray);
+		for (int i = 0; i < cricktersArray.length; i++) {
+			System.out.println(cricktersArray[i].toString());
+		}
+
+	}
+
+}

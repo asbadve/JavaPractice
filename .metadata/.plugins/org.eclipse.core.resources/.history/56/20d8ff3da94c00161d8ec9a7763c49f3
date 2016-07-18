@@ -1,0 +1,14 @@
+
+public class CricketPlayer {
+	String name;
+	int noOfInnings;
+	int noOfTimesNotOut;
+	int totalRuns;
+	double battingAverage;
+
+	static double avg(int totalRuns, int noOfInnings, int noOfTimesNotOut) {
+		double battingAverage = totalRuns / (noOfInnings - noOfTimesNotOut);
+		return battingAverage;
+	}
+
+}
